@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="멋쟁이 사자처럼">
+		<meta name="description" content="멋쟁이 사자처럼 2주차 car-jQuery project front입니다.">
+
+		<title>car</title>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="core.js"></script>
+
+		<style>
+			#car {
+				position: relative;
+				width: 200px;
+				height: 150px;
+				padding-left: 500px;
+				padding-top:250px;
+			}
+
+			#top {
+				position: relative;
+				width: 100px;
+				height: 100px;
+				background: #ff4444;
+				left: 50px;
+				border-radius: 10px;
+			}
+
+			#bottom {
+				position: relative;
+				width: 200px;
+				height: 50px;
+				top: -50px;
+				border-radius: 10px 10px 5px 5px;
+				background: #ff4444;
+			}
+
+			#fwheel {
+				position: relative;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				background: #333;
+				left: 10px;
+				top: -70px;
+				z-index: 2;
+			}
+
+			#bwheel {
+				position: relative;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				background: #333;
+				left: 150px;
+				top: -110px;
+				z-index: 2;
+			}
+
+			#shadow {
+				position: relative;
+				width: 182px;
+				height: 20px;
+				background: #aaa;
+				border-radius: 100%;
+				z-index: 1;
+				top: -123px;
+				left: 8px;
+			}
+			
+			.buttons {
+				position: fixed;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				background: #99cc00;
+				color: white;
+				text-align: center;
+				line-height: 40px;
+				font-weight: bold;
+			}
+			.buttons:hover{
+				background:#990000;
+			}
+			
+
+			#line {
+				width: 8px;
+				height: 62px;
+				border-radius: 20px;
+				background: #aaa;
+				position: fixed;
+				right: 79px; 
+				bottom: 183px; 
+			}
+
+			#controller {
+				width: 160px;
+				height: 120px;
+				border-radius: 20px;
+				background: #333;
+				position: fixed;
+				right: 75px; 
+				bottom: 75px;
+			}
+
+			#button_up {
+				bottom: 140px;
+				right: 135px;	
+			}
+
+			#button_down {
+				bottom: 90px;
+				right: 135px;	
+			}
+
+			#button_left {
+				bottom: 90px;
+				right: 185px;	
+			}
+
+			#button_right {
+				bottom: 90px;
+				right: 85px;	
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="car">
+			<div id="top"></div>
+			<div id="bottom"></div>
+			<div id="fwheel"></div>
+			<div id="bwheel"></div>
+			<div id="shadow"></div>
+		</div>
+		
+		<div id="controller">
+			<div id="line"></div>
+			<div class="buttons" id="button_up">↑</div>
+			<div class="buttons" id="button_left">←</div>
+			<div class="buttons" id="button_down">↓</div>
+			<div class="buttons" id="button_right">→</div>
+		</div>
+			
+	</body>
+</html>

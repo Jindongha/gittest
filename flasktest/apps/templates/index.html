@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>GET / POST</title>
+</head>
+<body>
+   <div>
+      GET : 
+      <form action="index" method="get">
+         <input type="text" name="text_get">
+         <input type="Submit" value="Submit">
+      </form>
+
+      <a href="{{ naver_get }}">{{naver_get}}</a><br/>
+      <a href="{{ google_get }}">{{google_get}}</a><br/>
+      <a href="{{ daum_get }}">{{ daum_get }}</a><br/>
+   </div>
+
+   <div>
+      POST : 
+      <form action="index" method="post">
+         <input type="text" name="text_post">
+         <input type="Submit" value="Submit">
+      </form>
+
+      {{ variable_post }}
+   </div>
+
+</body>
+</html>

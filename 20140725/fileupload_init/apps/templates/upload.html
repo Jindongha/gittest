@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload</title>
+
+</head>
+<body>
+
+	{% for url in urls %}
+		<p>{{url}}</p>
+<!--	<img src="{{url}}"> -->
+	{% endfor %}
+
+	<form action="{{ url_for("upload_db") }}" enctype ="multipart/form-data" method = "POST">
+		<input type="file" name = "photo"><br>
+		<input type="Submit" value="Submit">
+	</form>
+    
+</body>
+</html>
