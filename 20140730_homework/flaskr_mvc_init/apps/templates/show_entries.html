@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block body %}
+
+	<form action="{{ url_for('add_entry') }}" method="post" class="add-entry">
+		<dl>
+			<dt>Title:
+			<dd><input type="text" size=30 name="title">
+			<dt>Text:
+			<dd><textarea name="contents" rows=5 cols=40></textarea>
+			<dd><input type="submit" value="POST">
+		</dl>
+	</form>
+	<a href="{{url_for('up_sort_entry')}}">
+		<button>좋아요순 정렬</button>
+	</a>
+	<a href="{{url_for('down_sort_entry')}}"> 
+		<button>나빠요순 정렬</button>	
+	</a>
+
+	<ul class="entries">
+	{% for entry in entries %}
+		<li>
+			<h2>{{ entry['title'] }}</h2>
+			{{ entry['contents'] }}
+		</li>
+		<a href="{{url_for('plus_entry' , idx= entry['num'])}}">
+			<button>{{"+"}}{{entry['count']}}</button>
+		</a>
+		<a href="{{url_for('minus_entry' , idx= entry['num'])}}">
+			<button>나빠요</button>
+		</a>
+		<a href="{{url_for('delete_entry' , idx= entry['num'])}}"> 
+			<button>삭제</button>	
+		</a>
+		<a class="modify-text">
+			<button>수정</button>
+			<div>
+				<form action="{{url_for('upload_entry' , idx= entry['num'])}}" method="GET">
+					<dl>
+					<dt>Title:</dt>
+					<dd><input type="text" size=30 name="title" value = "{{entry['title']}}"></dd>
+					<dt>Text:</dt>
+					<dd><textarea name="contents" rows=5 cols=40 >{{entry['contents']}}</textarea></dd>
+					<dd><input type="submit">
+					</dl>
+				</form>
+			</div>
+		</a>
+	{% else %}
+		<li>
+			<em>Unbelievable.  No entries here so far</em>
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}
