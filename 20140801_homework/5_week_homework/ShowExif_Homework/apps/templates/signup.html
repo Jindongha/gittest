@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+    
+</head>
+<body>
+    <fieldset>
+    	<form action="{{ url_for('signup') }}" method = "POST">
+            <p>
+                <br />
+                아이디 
+                <input type = "text" name = "id"><br/>
+                패쓰워드
+                <input type = "passward" name = "pass1"><br/>
+                확인
+                <input type = "passward" name = "pass2"><br/>
+                <input type = "submit" value = "회원가입">
+            </p>
+        </form>
+        <a href="{{url_for('login')}}">
+            <button>로그인 페이지</button><br/>
+        </a>
+        <p>message : {% if message: %} {{message}} {% endif %}</p>
+        
+    </fieldset>
+</body>
+</html>

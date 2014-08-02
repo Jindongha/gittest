@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>사진 정보 표시하기</title>
+</head>
+<body>
+    <a href="{{url_for('albom')}}">
+        <button>그림 목록 보기</button>
+    </a>
+    <fieldset>
+        <form action="{{ url_for('start') }}" enctype="multipart/form-data" method="post">
+            <p>
+                정보를 보고 싶은 이미지를 업로드하세요.
+                <br />
+                <input type="file" name="file">
+                <input type="submit" value="Upload">
+            </p>
+        </form>
+    </fieldset>
+    <fieldset>
+        <h3>원본 이미지</h3>
+        <img src = "{{ original_path }}" width="30%" />
+    </fieldset>
+    <fieldset>
+        <h3>이 사진의 정보</h3>
+        {% for key in exif_data %}
+            <p>{{ key }} : {{ exif_data[key] }}</p>
+        {% endfor %}
+    </fieldset>
+</body>
+</html>
